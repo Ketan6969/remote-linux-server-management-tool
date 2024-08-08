@@ -3,8 +3,8 @@
 #DEVELOPER: KETAN SOLANKI 
 #VERSION: 1.0
 #######################################################################################
-from flask import Flask,redirect,url_for,request,session,flash,render_template,g
-import paramiko, random, psutil
+from flask import Flask,redirect,url_for,request,session,flash,render_template
+import paramiko, random
 from datetime import timedelta
 
 #######################################################################################
