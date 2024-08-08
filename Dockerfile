@@ -28,6 +28,7 @@ COPY --from=builder /app /app
 
 # Expose the necessary port (if applicable)
 EXPOSE 5000
+EXPOSE 22
 
 # Command to run the application
 CMD ["python", "main.py"]
