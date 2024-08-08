@@ -3,14 +3,14 @@ pipeline {
     environment {
         DOCKER_CREDENTIAL_ID = 'docker-hub-credentials'
         REGISTRY = 'docker.io'
-        DOCKER_IMAGE = 'ketan2004/remote-sever-management-tool' 
-    }
+        DOCKER_IMAGE = 'ketan2004/remote-linux-server-management-tool' 
+        }
 
     stages {
         stage('checkout') {
             steps {
                 // This will fetch the code from GitHub
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/Ketan6969/Remote-server-management-tool.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/Ketan6969/remote-linux-server-management-tool.git']]])
             }
         }
 
