@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Connect{% endblock %}
+{% block content %}
+<div class="container">
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>                
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<h1>REMOTE SERVER MANAGEMENT TOOL</h1>
+<form action="#" method="POST">
+    <input type="text" name="host" placeholder="host" required> 
+    <input type="text" name="username" placeholder="username" required> 
+    <input type="text" name="keyFile" placeholder="key file" required> 
+    <input type="submit" value="Connect">
+
+</form>
+</div>
+{% endblock %}

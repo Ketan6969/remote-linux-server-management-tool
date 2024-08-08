@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="container">
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>                
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<form action="#" method="POST">
+    <div class="output">
+        <p>output: {{output}}</p>
+        {% if err %}
+            {{err}}
+        {% endif %}
+    </div>
+    <div class="input">
+        <input type="text" name="cmd" id="cmd" placeholder="enter cmd" required>
+        <input type="submit" name="action" value="execute">
+    </div>
+</form>
+<form action="" method="post">
+    <input type="text" name="local_path" placeholder="Local File path" required>
+    <input type="text" name="remote_path" placeholder="Remote file path" required>
+    <input type="submit" name="action" value="upload">
+    <input type="submit" name="action" value="download">
+</form>
+<div class="usage">
+    <b><p>STATS</p></b>
+    <p><b>CPU:</b> {{cpu_usage}}</p>
+    <p><b>MEMORY USAGE:</b> {{memory_usage}}</p>
+    <p><b>DISK USAGE:</b> {{disk_usage}}</p>
+</div>
+</div>
+
+{% endblock %}
